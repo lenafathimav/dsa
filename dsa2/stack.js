@@ -124,32 +124,131 @@
 // stack using queue
 
 
-class Stack{
-    constructor(){
-        this.q1=[]
-        this.q2=[]
-    }
+// class Stack{
+//     constructor(){
+//         this.q1=[]
+//         this.q2=[]
+//     }
 
 
-    push(value){
+//     push(value){
 
-        this.q2.push(value)
+//         this.q2.push(value)
 
-        while(this.q1.length > 0){
-            this.q2.push(this.q1.shift())
+//         while(this.q1.length > 0){
+//             this.q2.push(this.q1.shift())
+//         }
+
+//         [this.q1,this.q2]=[this.q2,this.q1]
+//     }
+
+//     pop(){
+//         return this.q1.shift()
+//     }   
+
+// }
+
+
+// let s = new Stack();
+// s.push(10);
+// s.push(20);
+// console.log(s.q1)
+
+
+
+
+// revese stack
+// class Stack {
+//   constructor() {
+//     this.stack = []
+//   }
+
+//   push(char) {
+//     this.stack.push(char)
+//   }
+//   pop() {
+//     return this.stack.pop()
+//   }
+//   isEmpty() {
+//     return this.stack.length === 0
+//   }
+// }
+
+
+
+
+// function reverse(str){
+//   let stack= new Stack()
+
+
+//   for(let char of str){
+//     stack.push(char)
+//   }
+
+//   let rev=""
+//   while(!stack.isEmpty()){
+//     rev+=stack.pop()
+//   }
+//   return rev
+// }
+
+
+// let str="lena"
+// console.log(reverse(str))
+
+
+
+//     function insertBottam(stack,item){
+//         if(stack.length === 0){
+//             stack.push(item)
+//             return 
+//         }
+
+//         let top=stack.pop()
+//         insertBottam(stack,item)
+//         stack.push(top)
+//     }
+
+
+//     function  reverse(stack){
+//         if(stack.length === 0)return 
+//         let top= stack.pop() 
+//         reverse(stack)
+//         insertBottam(stack,top)
+//     }
+
+// let stack=[5,2,1,6]
+// console.log("Orginal",stack)
+// reverse(stack)
+// console.log("after",stack)
+
+
+function isbalanced(str){
+
+    let stack =[]
+
+    for(let char of str){
+
+        if(char === '(' || char === '{'|| char === '['){
+            stack.push(char)
+        }else{
+
+            if(stack.length === 0)return false
+
+
+            let last = stack.pop()
+
+            if(char === ')' && last !=='(')return false
+            if(char === '}' && last !=='{')return false
+            if(char === ']' && last !=='[')return false
         }
 
-        [this.q1,this.q2]=[this.q2,this.q1]
+
     }
 
-    pop(){
-        return this.q1.shift()
-    }   
 
+    return stack.length === 0
+    
 }
 
-
-let s = new Stack();
-s.push(10);
-s.push(20);
-console.log(s.q1)
+console.log(isbalanced("{}{}"))
