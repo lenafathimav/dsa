@@ -300,4 +300,44 @@
 // ht.pop()
 // console.log(ht.minstack);  
 // console.log(ht.getMin());  
+ 
 
+
+// function sortedarr(stack){
+//   let tempstack=[]
+
+//   while(stack.length > 0){
+
+//     let temp=stack.pop()
+
+//     while(tempstack.length > 0 && tempstack[tempstack.length-1] > temp){
+//         stack.push(tempstack)
+//     }
+
+//     tempstack.push(temp)
+//   }
+
+//   return tem
+// }
+
+
+
+// function twosum(arr,target){
+  
+//   let map={}
+  
+//   for(let i=0;i<arr.length;i++){
+//     let num=arr[i]
+//     let needed=target - num
+    
+    
+//     if(map[needed]!==undefined){
+//       return [needed,num]
+//     }
+    
+//     map[num]=i
+//   }
+  
+//   return null
+// }
+// console.log(twosum([2, 7, 11, 15], 9))

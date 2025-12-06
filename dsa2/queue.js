@@ -122,66 +122,58 @@
 // q.print()
 
 
-// class QueueUsingStacks {
-//     constructor() {
-//         this.stack1 = [];
-//         this.stack2 = [];
+// class Queue{
+//   constructor(){
+//     this.s1=[]
+//     this.s2=[]
+//   }
+  
+  
+//   enqueue(value){
+//     this.s1.push(value)
+//   }
+  
+//   dequeue(){
+//     if(this.s1.length == 0)return 
+    
+//     while(this.s1.length >1 ){
+//       this.s2.push(this.s1.pop())
 //     }
-
-   
-//     enqueue(value) {
-//         this.stack1.push(value);
+    
+//     let removed=this.s1.pop()
+    
+//     while(this.s2.length){
+//       this.s1.push(this.s2.pop())
 //     }
+    
+//     return removed
+//   }
+  
+//   peek() {
+//   if (this.s1.length === 0) return null;
 
-//     dequeue() {
-        
-//         if (this.stack1.length === 0 && this.stack2.length === 0) {
-//             return null;
-//         }
+//   while (this.s1.length > 1) {
+//     this.s2.push(this.s1.pop());
+//   }
 
-       
-//         if (this.stack2.length === 0) {
-//             while (this.stack1.length > 0) {
-//                 this.stack2.push(this.stack1.pop());
-//             }
-//         }
+//   let front = this.s1.pop();
+//   this.s2.push(front); // put it back
 
-     
-//         return this.stack2.pop();
-//     }
+//   while (this.s2.length) {
+//     this.s1.push(this.s2.pop());
+//   }
 
-
-//     front() {
-//         if (this.stack1.length === 0 && this.stack2.length === 0) return null;
-
-//         if (this.stack2.length > 0) return this.stack2[this.stack2.length - 1];
-
-//         return this.stack1[0]; 
-//     }
-
-
-//     isEmpty() {
-//         return this.stack1.length === 0 && this.stack2.length === 0;
-//     }
-
-
-//     size() {
-//         return this.stack1.length + this.stack2.length;
-//     }
+//   return front;
+// }
 // }
 
 
-// let q = new QueueUsingStacks();
-
+// const q=new Queue()
 // q.enqueue(10);
 // q.enqueue(20);
 // q.enqueue(30);
-
-// console.log(q.dequeue()); 
-// console.log(q.front());   
-// console.log(q.dequeue());
-// console.log(q.dequeue()); 
-// console.log(q.dequeue()); 
+// q.dequeue()
+// console.log(q.s1)
 
 
 // class Queue{
@@ -296,14 +288,6 @@
 
 
 
-
-
-
-
-
-
-
-
 // class CircularQueue {
 //   constructor(size) {
 //     this.size = size;
@@ -386,41 +370,45 @@
 
 
 
+// class Proiorty{
+//   constructor(){
+//     this.item=[]
+//   }
+  
+//   enqueue(element,priority){
+    
+//     const queueElement={element,priority}
+    
+//     let added=false
+    
+//     for(let i=0;i<this.item.length;i++){
+//       if(queueElement.priority < this.item[i].priority){
+//        this.item.splice(i, 0, queueElement); // call splice
+// added = true;                         // set flag
+// break;                                 // exit loop
 
-
-
-
-// class PriorityQueue{
-//     constructor(){
-//         this.queue=[]
-//     }
-//     enqueue(value,priority){
-//         let newItem = {value,priority};
-//         let added = false;
-//         for(let i=0;i<this.queue.length;i++){
-//             if(priority<this.queue[i].priority){
-//                 this.queue.splice(i,0,newItem)
-//                 added=true;
-//                 break
-//             }
 //         }
-//         if(!added)this.queue.push(newItem)
+//       }
+//       if(!added){
+//         this.item.push(queueElement)
+//       }
 //     }
-//     dequeue(){
-//         if(this.isEmpty())return "its empty"
-//         return this.queue.shift()
-//     }
-//     peek(){
-//         return this.isEmpty()?"its over":this.queue[0]
-//     }
-//     display(){
-//         console.log(this.queue.map(item=>`${item.value}(${item.priority}`))
-//     }
+  
+  
+//   dequeue(){
+//     return this.item.shift()
+//   }
+  
+//   display(){
+//     console.log(this.item.map(i=>i.element))
+//   }
 // }
 
-// let lt = new PriorityQueue(3)
-// lt.enqueue("jobhi",2)
-// lt.enqueue("amrith",1)
-// lt.enqueue("aksa",3)
-// lt.display()
+// const pq= new Proiorty()
+// pq.enqueue(10,1)
+// pq.enqueue(20,2)
+// pq.enqueue(30,3)
+// console.log(pq.dequeue())
+// pq.display()
 
+    

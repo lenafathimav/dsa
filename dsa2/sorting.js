@@ -17,6 +17,16 @@
 // console.log(bubblesort(arr))
 
 
+function inserction(arr){
+    for(let i=1;i<arr.length ;i++){
+        let temp= arr[i]
+       let j=0
+       while(j>=0 && arr[j]>temp){
+        arr[j+1]=arr[j]
+       }
+    }
+    arr[j+1]=temp
+}
 
 // function selectionSort(arr){
 
@@ -100,3 +110,11 @@ function merge(left,right){
 }
 
 console.log(mergesort([8,3,5,4,7,6,1,2]))
+
+
+
+
+
+
+
+
