@@ -17,16 +17,7 @@
 // console.log(bubblesort(arr))
 
 
-function inserction(arr){
-    for(let i=1;i<arr.length ;i++){
-        let temp= arr[i]
-       let j=0
-       while(j>=0 && arr[j]>temp){
-        arr[j+1]=arr[j]
-       }
-    }
-    arr[j+1]=temp
-}
+
 
 // function selectionSort(arr){
 
@@ -77,39 +68,39 @@ function inserction(arr){
 
 
 
-function mergesort(arr){
-    if(arr.length <= 1)return arr
+// function mergesort(arr){
+//     if(arr.length <= 1)return arr
 
-    let mid= Math.floor(arr.length/2)
+//     let mid= Math.floor(arr.length/2)
 
-    let left = mergesort(arr.slice(0,mid))
-    let right = mergesort(arr.slice(mid))
+//     let left = mergesort(arr.slice(0,mid))
+//     let right = mergesort(arr.slice(mid))
 
-    return merge(left,right)
-}
+//     return merge(left,right)
+// }
 
 
 
-function merge(left,right){
+// function merge(left,right){
 
-    let merged=[]
-    let i=0;
-    let j=0
+//     let merged=[]
+//     let i=0;
+//     let j=0
 
-    while(i<left.length && j<right.length){
-        if(left[i]<right[j]){
-            merged.push(left[i])
-            i++
-        }else{
-            merged.push(right[j])
-            j++
-        }
-    }
+//     while(i<left.length && j<right.length){
+//         if(left[i]<right[j]){
+//             merged.push(left[i])
+//             i++
+//         }else{
+//             merged.push(right[j])
+//             j++
+//         }
+//     }
 
-    return [...merged,...left.slice(i),...right.slice(j)]
-}
+//     return [...merged,...left.slice(i),...right.slice(j)]
+// }
 
-console.log(mergesort([8,3,5,4,7,6,1,2]))
+// console.log(mergesort([8,3,5,4,7,6,1,2]))
 
 
 
